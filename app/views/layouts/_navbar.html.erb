@@ -1,0 +1,48 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<!-- component -->
+<div class="place-items-center">
+  <section class="relative mx-auto">
+    <!-- navbar -->
+    <nav class="flex items-center justify-between text-white" style="background-color: #282828; position: relative; margin-bottom: 20px; pading-bottom: 20px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 100%;">
+      <div class="flex items-center w-full px-5 py-6 w-90 xl:px-12">
+        <a class="text-3xl font-bold font-heading nav-title" href="/">
+          <%= image_tag "yutub.png", width: 30, height: 30 %>
+        </a>
+        <!-- Nav Links -->
+        <li>
+          <a class= "" href= "/"> Home </a>
+        </li>
+        <% if current_user %>
+        <li>
+          <a class= "" href= "#"> 
+            <%= link_to "Upload", new_post_path %> 
+          </a>
+        </li>
+
+        <li>
+          <a class= ""> 
+            <%#= link_to "Profile", user_path(current_user) %> 
+          </a>
+          <%= button_to("Log out", destroy_user_session_path, method: :delete) %>
+        </li>
+
+        <% else %>
+        
+        <li>
+          <a class= "" href= "#"> 
+            <%= link_to "Sign Up", new_user_registration_path %> 
+          </a>
+        </li>
+
+        <% end %>
+                 
+        <!-- Header Icons -->
+      </div>
+      <!-- Responsive navbar -->
+      
+      <%#= render "layouts/search_bar"%>
+    </nav>
+  </section>
+</div>
